@@ -43,7 +43,7 @@ let quotes = [
     {
       quote: "Life is ten percent what happens to you and ninety percent how you respond to it.",
       source: "Charles Swindoll"
-    }
+    },
     {
       quote: "It always seems impossible until it's done.",
       source: "Nelson Mandela",
