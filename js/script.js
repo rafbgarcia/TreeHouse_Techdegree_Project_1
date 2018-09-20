@@ -45,8 +45,9 @@ function printQuote () {
   generateRandomRGB();
 }
 
-/* This line of code repeatedly calls printQuote() every five seconds.
-That way, quotes are changed every five seconds or when buttom is clicked*/
+/* This line of code repeatedly calls printQuote() every fifteen seconds.
+This way, quotes are changed every fifteen seconds without user having
+to click the button*/
 let changeQuote = window.setInterval(printQuote, 15000);
 
 // This event listener will respond to "Show another quote" button clicks.
