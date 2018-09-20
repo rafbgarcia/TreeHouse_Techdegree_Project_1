@@ -17,14 +17,15 @@ function generateRandomRGB() {
   document.body.style.backgroundColor = randomRgb;
 }
 
-// This function gets random quotes from the quotes array.
+// This function gets random quotes from the quotes array in quotes.js.
 function getRandomQuote ( array ) {
   let randomNumber = Math.floor( Math.random() * array.length );
   let accessQuote = array[randomNumber];
   return accessQuote;
   }
 
-// This function receives getRandomQuote() values and prints a random quote from the quotes array.
+/* This function receives getRandomQuote() values and prints a random quote
+from the quotes array*/
 function printQuote () {
   let receiveQuote = getRandomQuote( quotes );
   let initHtml = '<p class="quote"> ' + receiveQuote.quote + ' </p>';
