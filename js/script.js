@@ -9,7 +9,7 @@ let quotes = [
     { quote: "A friend is one that knows you as you are, understands where you have been, accepts what you have became, and still, gently allows you to grow.", source: "William Shakespeare" },
     { quote: "Great minds discuss ideas; average minds discuss events; small minds discuss people.", source: "Eleanor Roosevelt" },
     { quote: "A successful man is one who can lay a firm foundation with the bricks others have thrown at him.", source: "David Brinkley" },
-    { quote: "You only live once, but if you do it right, once is enough.", source: "Mae West", tag: "life" },
+    { quote: "You only live once, but if you do it right, once is enough.", source: "Mae West", tag: "life quote" },
     { quote: "The only impossible journey is the one you never begin.", source: "Anthony Robbins", year: "2005" },
     { quote: "Life is ten percent what happens to you and ninety percent how you respond to it.", source: "Charles Swindoll" }
 ];
@@ -31,7 +31,7 @@ function printQuote () {
       } else if (receiveQuote.hasOwnProperty("year")) {
       initHtml += '<span class="year"> ' + receiveQuote.year + ' </span>';
     } else if (receiveQuote.hasOwnProperty("tag")) {
-      initHtml += '<span class="tag"> ' + receiveQuote.tag + ' </span>'
+      initHtml += ', ' + '<span class="tag"> ' + receiveQuote.tag + ' </span>'
     }
   initHtml += "</p>";
 

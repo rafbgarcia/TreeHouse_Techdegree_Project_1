@@ -63,7 +63,7 @@ body {
   font-style: normal;
 }
 
-.year:before {
+.citation:after {
   content: ", ";
   font-style: normal;
 }
