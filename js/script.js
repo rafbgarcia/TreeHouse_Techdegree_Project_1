@@ -21,7 +21,7 @@ function getRandomQuote ( array ) {
   return accessQuote;
   }
 
-// This function prints a random quote from the quotes array.
+// This function receive the getRandomQuote function and prints a random quote from the quotes array.
 function printQuote () {
   let receiveQuote = getRandomQuote( quotes );
   let initHtml = '<p class="quote"> ' + receiveQuote.quote + ' </p>';
