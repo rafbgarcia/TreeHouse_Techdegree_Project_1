@@ -7,7 +7,7 @@ function generateRandomNumber() {
 }
 
 /* This function gets the random numbers from generateRandomNumber()
-   and generate random RGB colors*/
+   generating random RGB colors and applying them to background */
 function generateRandomRGB() {
   var randomRgb = '';
   var mixedColor = generateRandomNumber();
@@ -17,7 +17,7 @@ function generateRandomRGB() {
   document.body.style.backgroundColor = randomRgb;
 }
 
-// This function gets random quotes from the quotes array in quotes.js.
+// This function gets random quotes from the quotes array in quotes.js file
 function getRandomQuote ( array ) {
   let randomNumber = Math.floor( Math.random() * array.length );
   let accessQuote = array[randomNumber];
@@ -25,7 +25,7 @@ function getRandomQuote ( array ) {
   }
 
 /* This function receives getRandomQuote() values and prints a random quote
-from the quotes array*/
+from the quotes array in quotes.js */
 function printQuote () {
   let receiveQuote = getRandomQuote( quotes );
   let initHtml = '<p class="quote"> ' + receiveQuote.quote + ' </p>';
@@ -40,17 +40,28 @@ function printQuote () {
       initHtml += ', ' + '<span class="tag"> ' + receiveQuote.tag + ' </span>'
     }
   initHtml += "</p>";
-
-  document.getElementById('quote-box').innerHTML = initHtml;
-  generateRandomRGB();
+/* Specific access using DIV ID in index.html file to print the random
+quotes on specific place of the page */
+document.getElementById('quote-box').innerHTML = initHtml;
+// Call the generateRandomRGB function.
+generateRandomRGB();
 }
-
-/* This line of code repeatedly calls printQuote() every fifteen seconds.
-This way, quotes are changed every fifteen seconds without user having
-to click the button*/
-let changeQuote = window.setInterval(printQuote, 15000);
-
 // This event listener will respond to "Show another quote" button clicks.
-/* This line of code calls the printQuote() when user clicks on the
-"Show Another Quote" button*/
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+
+/* This function repeatedly calls printQuote() every seven seconds when
+the user click on the "Start Auto Quote" button. */
+let autoQuote;
+function autoQuoteStart () {
+  autoQuote = window.setInterval(printQuote, 7000);
+}
+// This event listener will respond to "Start Auto Quote" button clicks.
+document.getElementById('startShow').addEventListener("click", autoQuoteStart, false);
+
+/* This function stop autoQuoteStart() by clearing the seven seconds
+interval when the user click on the "Stop Auto Quote" button. */
+function autoQuoteStop () {
+  window.clearInterval(autoQuote);
+}
+// This event listener will respond to "Stop Auto Quote" button clicks.
+document.getElementById('stopShow').addEventListener("click", autoQuoteStop, false);
